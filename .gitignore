@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Secrets Vault sensitive runtime files
+data/*
+!data/.gitkeep
+!data/README.md
+
+# Build & Standalone Distribution (PyInstaller & Vite)
+dist/
+build/
+*.spec
+
+# Frontend dependencies
+frontend-react/node_modules/
+frontend-react/.vite/
+
+# Agent skills and configurations
+.agents/
+
+# Plaintext exports
+*.env
+*.csv
+
+# OS & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
