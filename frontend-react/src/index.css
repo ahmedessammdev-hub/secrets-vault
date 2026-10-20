@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  :root[data-theme="light"] {
+    --bg-base: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-card: #f1f5f9;
+    --bg-hover: #e2e8f0;
+    --border-main: #cbd5e1;
+    --border-subtle: #e2e8f0;
+    --text-main: #0f172a;
+    --text-sub: #334155;
+    --text-muted: #64748b;
+  }
+
+  .dark,
+  :root[data-theme="dark"] {
+    --bg-base: #0a0d14;
+    --bg-surface: #111622;
+    --bg-card: #151b2a;
+    --bg-hover: #1c2438;
+    --border-main: #1f2a3f;
+    --border-subtle: #162032;
+    --text-main: #f8fafc;
+    --text-sub: #94a3b8;
+    --text-muted: #64748b;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Universal form control theme binding */
+  input,
+  select,
+  textarea {
+    background-color: var(--bg-surface) !important;
+    border-color: var(--border-main) !important;
+    color: var(--text-main) !important;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #0284c7 !important;
+    box-shadow: 0 0 0 1px #0284c7 !important;
+    background-color: var(--bg-card) !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-muted) !important;
+  }
+
+  select option {
+    background-color: var(--bg-surface) !important;
+    color: var(--text-main) !important;
+  }
+
+  /* Override Chrome / Edge -webkit-autofill bright background */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--text-main) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--bg-surface) inset !important;
+    box-shadow: 0 0 0px 1000px var(--bg-surface) inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.35);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
